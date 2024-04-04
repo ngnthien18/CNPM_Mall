@@ -1,0 +1,57 @@
+﻿@model CNPMLyThuyet.Model.ChiTietBaoTri
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_KyThuat.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc muốn xóa?</h3>
+<div>
+    <h4>ChiTietBaoTri</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBaoTri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBaoTri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChiPhi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChiPhi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhanVien.MaNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThietBi.TenTB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThietBi.TenTB)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Xóa" class="btn btn-danger" /> |
+    <a href="/ChiTietBaoTris/Index" class="btn btn-success">Trở lại</a>
+</div>
+    }
+</div>

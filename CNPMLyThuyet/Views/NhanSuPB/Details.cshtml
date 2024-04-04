@@ -1,0 +1,27 @@
+﻿@model CNPMLyThuyet.Model.PhongBan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_NhanSu.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>PhongBan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenPB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenPB)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPB }, new { @class = "btn btn-primary" }) |
+    <a href="/NhanSuPB/Index" class="btn btn-success">Trở lại</a>
+</p>

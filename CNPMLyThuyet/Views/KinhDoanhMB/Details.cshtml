@@ -1,0 +1,69 @@
+﻿@model CNPMLyThuyet.Model.MatBang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_KinhDoanh.cshtml";
+}
+
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>MatBang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenMB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TinhTrang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhTrang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            <img src="~/Images/@Model.ImagePath" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KhachHang.HoVaTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhachHang.HoVaTen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tang.TenTang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tang.TenTang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaMB },new {@class="btn btn-success"}) |
+    <a href="/KinhDoanhMB/Index" class="btn btn-success">Trở lại</a>
+</p>
+

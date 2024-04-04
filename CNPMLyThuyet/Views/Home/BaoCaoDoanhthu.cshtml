@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "BaoCaoDoanhthu";
+    Layout = "~/Views/Shared/_TaiChinh.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <select id="ddYear" class="form-control" style="width:150px">
+            <option value="0">Select Year</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            
+
+
+        </select>
+    </div>
+    <div id="dvChart">
+        <canvas style="height:300px"id="chartProduct"></canvas>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/Chart.min.js"></script>
+    <script>
+
+        $('#ddYear').on('change', function () {
+            var year = $(this).val();
+            GetReportList(year)
+        });
+        GetReportList(2022)
+        function GetReportList(year) {
+            $.get('/Home/GetBaoCao?year=' + year, function (resp) {
+                RegisterChart(resp)
+
+            });
+        }
+
+
+        
+
+
+        function RegisterChart(lsData) {
+            $("canvas#chartProduct").remove();
+            $('#dvChart').html(' <canvas style="height:300px"id="chartProduct"></canvas>')
+            var lslabel = [];
+            var lsDataSource = [];
+
+            $.each(lsData, function (index, item) {
+                lslabel.push(item.Thang);
+                lsDataSource.push(item.TongTien)
+                
+
+            })
+
+
+
+            var ctx = document.getElementById('chartProduct');
+            var lineChartData = {
+                labels: lslabel,
+                datasets: [{
+                    label: 'TongTien',
+                    fill: false,
+                    backgroundColor: '#0b9603',
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1,
+                   
+                    data:lsDataSource, 
+
+                }]
+
+            };
+            var myBarChart = new Chart(ctx, {
+                type: 'line',
+                data: lineChartData,
+                options: {
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+        }
+
+
+
+
+
+
+       
+
+    </script>
+    }

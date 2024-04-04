@@ -1,0 +1,73 @@
+﻿@model CNPMLyThuyet.Model.ChiTietBaoTri
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_KyThuat.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div id="parentDiv">
+    <h4 style="text-align:center">Chi tiết bảo trì</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBaoTri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBaoTri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChiPhi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChiPhi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhanVien.MaNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.MaNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThietBi.TenTB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThietBi.TenTB)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.STT }, new { @class = "btn btn-primary" }) |
+    <a href="/ChiTietBaoTris/Index" class="btn btn-success">Trở lại</a>
+    <button id="printPDF" class="btn btn-danger">Xuất PDF</button>
+</p>
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        $('#printPDF').click(function () {
+            var element = document.getElementById('parentDiv');
+            var opt = {
+                margin: 1,
+                filename: 'ChiTietBaoTri.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            // New Promise-based usage:
+            html2pdf().set(opt).from(element).save();
+            // Old monolithic-style usage:
+            html2pdf(element, opt);
+        })
+    </script>
+}
+

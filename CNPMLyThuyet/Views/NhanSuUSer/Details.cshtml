@@ -1,0 +1,35 @@
+﻿@model CNPMLyThuyet.Model.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_NhanSu.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NameID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pass)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDUSER }, new {@class="btn btn-primary"}) |
+    <a href="/NhanSuUSer/Index" class="btn btn-success">Trở lại</a>
+</p>

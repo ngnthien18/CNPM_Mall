@@ -1,0 +1,142 @@
+﻿@model IEnumerable<CNPMLyThuyet.Model.MatBang>
+
+@{
+    ViewBag.Title = "DanhSachMatBangs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    *, *:after, *:before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    img {
+        height: 350px;
+        width:350px;
+    }
+
+    .ui-card {
+        width: 350px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease-out;
+        background: radial-gradient(#111 50%, #000 100%);
+    }
+
+        .ui-card img {
+            transform: scale(1.3);
+            transition: all 0.3s ease-out;
+        }
+
+        .ui-card:hover img {
+            transform: scale(1.1) translateY(-20px);
+            opacity: 0.3
+        }
+
+        .ui-card .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+        }
+
+            .ui-card .description h3 {
+                font-weight: 700;
+                font-size: 32px;
+                margin: 0 0 20px;
+                transform: translateY(30px);
+                opacity: 0;
+                transition: all 0.3s ease-out;
+            }
+
+            .ui-card .description p {
+                transform: translateY(30px);
+                opacity: 0;
+                transition: all 0.3s ease-out 0.2s;
+            }
+
+            .ui-card .description a {
+                color: #fff;
+                background: #34aff3;
+                display: inline-block;
+                padding: 10px 25px;
+                border-radius: 5px;
+                text-decoration: none;
+                transform: translateY(30px);
+                opacity: 0;
+                transition: all 0.3s ease-out 0.4s;
+            }
+
+                .ui-card .description a:hover {
+                    background: #0a83c5;
+                }
+
+        .ui-card:hover .description h3 {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .ui-card:hover .description p {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .ui-card:hover .description a {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    .btn-primary:hover {
+        background-color: #007bff; 
+        border-color: #007bff; 
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-3" style="margin-top:60px">
+        <div class="card">
+            <div class="card-body">
+                @using (Html.BeginForm("DanhSachMatBangs", "Home"))
+                {
+                    <b>Search by:</b><br>
+                    @Html.RadioButton("searchby", "Tầng trệt") <text>Tầng trệt</text><br>
+                    @Html.RadioButton("searchby", "Tầng 1") <text>Tầng 1</text><br>
+                    @Html.RadioButton("searchby", "Tầng 2") <text>Tầng 2</text><br>
+                    @Html.RadioButton("searchby", "Tầng 3", true) <text>Tầng 3</text><br>
+                    @Html.CheckBox("dathue", false) <text>Đã  thuê</text><br>
+                    @Html.CheckBox("chuathue", false) <text>Chưa thuê</text><br>
+                    <input type="submit" value="Tìm kiếm" class="btn btn-primary mt-3">
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div style="margin: 10px auto;">
+            <h2 style="text-align: center">DANH SÁCH MẶT BẰNG</h2>
+            <hr />
+            <div class="row">
+                @foreach (var matbang in Model)
+                {
+                    <div class="col-lg-4 col-md-6 mb-3" style="margin:10px auto">
+
+                        <div class="ui-card">
+                            <img src="~/Images/@matbang.ImagePath">
+                            <div class="description">
+                                <h3>@matbang.TenMB</h3>
+                                <p>Giá:@matbang.GiaTien đ</p>
+                                @Html.ActionLink("CHI TIẾT", "Details",new { id= matbang.MaMB})
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    
+</div>
+</div>
+

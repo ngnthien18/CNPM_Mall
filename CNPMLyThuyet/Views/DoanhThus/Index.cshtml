@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CNPMLyThuyet.Model.DoanhThu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TaiChinh.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Thang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MatBang.TenMB)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatBang.TenMB)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaDT }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaDT }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaDT })
+        </td>
+    </tr>
+}
+
+</table>

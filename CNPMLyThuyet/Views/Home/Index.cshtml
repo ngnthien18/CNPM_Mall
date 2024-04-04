@@ -1,0 +1,485 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="main-content">
+    <div class="container">
+
+        <div class="floor-map">
+            <h1 class="text-center text-uppercase">Bản đồ sàn</h1>
+            <ul class="nav nav-tabs d-none d-md-flex" id="floor-map" role="tablist">
+
+
+                <li class="nav-item">
+                    <a class="nav-link active" id="tab-floor-map-0" data-toggle="tab" href="#floor-map-0" role="tab" aria-controls="home" aria-selected="true">
+                        <h2>Tầng trệt</h2>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link " id="tab-floor-map-1" data-toggle="tab" href="#floor-map-1" role="tab" aria-controls="home" aria-selected="false">
+                        <h2>Tầng 1</h2>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link " id="tab-floor-map-2" data-toggle="tab" href="#floor-map-2" role="tab" aria-controls="home" aria-selected="false">
+                        <h2>Tầng 2</h2>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link " id="tab-floor-map-3" data-toggle="tab" href="#floor-map-3" role="tab" aria-controls="home" aria-selected="false">
+                        <h2>Tầng 3</h2>
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="filters-mb d-md-none">
+                <i class="zmdi zmdi-label"></i>
+                <select class="custom-select filters-select" id="mySelect">
+                    <option value="0">Tầng trệt</option>
+                    <option value="1">Tầng 1</option>
+                    <option value="2">Tầng 2</option>
+                    <option value="3">Tầng 3</option>
+                </select>
+            </div>
+
+            <div class="tab-content" id="floor-map-TabContent">
+
+                <div class="tab-pane fade show active" id="floor-map-0" role="tabpanel" aria-labelledby="floor-map-0">
+                    <div class="zoom-wrapper">
+
+                        <div class="zoom-image">
+                            <img class="panzoom img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/gf-2.png">
+                        </div>
+                        <div class="button-close"><i class="zmdi zmdi-close-circle"></i></div>
+                        <div class="zoom-control" id="positionButtonDiv">
+                            <div class="control-wrapper">
+                                <div class="control-button zoom-in"><i class="bi bi-zoom-in"></i></div>
+                                <div class="control-button zoom-out"><i class="bi bi-zoom-out"></i></div>
+                            </div>
+                        </div>
+                        <div class="zoom-open">
+                            <div class="control-button"><i class="zmdi zmdi-zoom-in"></i></div>
+                        </div>
+                    </div>
+                    <div class="backdrop-zoom"></div>
+
+                    <div class="facilities-floor-intro">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_toilet.png" alt="Nhà vệ sinhRestroom" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Nhà vệ sinh</h4>
+                                        <p class="icon-sub-title">Restroom</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_thang-cuon.png" alt="THANG CUỐNEscalator" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">THANG CUỐN</h4>
+                                        <p class="icon-sub-title">Escalator</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_thang-may.png" alt="THANG MÁYElevator" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">THANG MÁY</h4>
+                                        <p class="icon-sub-title">Elevator</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_xe-lan.png" alt="Phòng vệ sinh cho người khuyết tậtHandicapped toilet" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Phòng vệ sinh cho người khuyết tật</h4>
+                                        <p class="icon-sub-title">Handicapped toilet</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_me-con.png" alt="Phòng Mẹ & BéBaby room" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Phòng Mẹ & Bé</h4>
+                                        <p class="icon-sub-title">Baby room</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/bo-sung_qtt.png" alt="Quầy thông tinInformation counter" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Quầy thông tin</h4>
+                                        <p class="icon-sub-title">Information counter</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/bo-sung_atm.png" alt="Góc ATMATM" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Góc ATM</h4>
+                                        <p class="icon-sub-title">ATM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+                <div class="tab-pane fade " id="floor-map-1" role="tabpanel" aria-labelledby="floor-map-1">
+                    <div class="zoom-wrapper">
+
+                        <div class="zoom-image">
+                            <img class="panzoom img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/1f-2.png">
+                        </div>
+                        <div class="button-close"><i class="zmdi zmdi-close-circle"></i></div>
+                        <div class="zoom-control" id="positionButtonDiv">
+                            <div class="control-wrapper">
+                                <div class="control-button zoom-in"><i class="bi bi-zoom-in"></i></div>
+                                <div class="control-button zoom-out"><i class="bi bi-zoom-out"></i></div>
+                            </div>
+                        </div>
+                        <div class="zoom-open">
+                            <div class="control-button"><i class="zmdi zmdi-zoom-in"></i></div>
+                        </div>
+                    </div>
+                    <div class="backdrop-zoom"></div>
+
+                    <div class="facilities-floor-intro">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_toilet.png" alt="Nhà vệ sinhToilet" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Nhà vệ sinh</h4>
+                                        <p class="icon-sub-title">Toilet</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_thang-cuon.png" alt=" Thang cuốn Escalator" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase"> Thang cuốn</h4>
+                                        <p class="icon-sub-title"> Escalator</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_thang-may.png" alt="THANG MÁYElevator" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">THANG MÁY</h4>
+                                        <p class="icon-sub-title">Elevator</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_xe-lan.png" alt="Nhà vệ sinh cho người khuyết tậtHandicapped toilet" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Nhà vệ sinh cho người khuyết tật</h4>
+                                        <p class="icon-sub-title">Handicapped toilet</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_me-con.png" alt="Phòng Mẹ & BéBaby room" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Phòng Mẹ & Bé</h4>
+                                        <p class="icon-sub-title">Baby room</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+                <div class="tab-pane fade " id="floor-map-2" role="tabpanel" aria-labelledby="floor-map-2">
+                    <div class="zoom-wrapper">
+
+                        <div class="zoom-image">
+                            <img class="panzoom img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/2f-2.png">
+                        </div>
+                        <div class="button-close"><i class="zmdi zmdi-close-circle"></i></div>
+                        <div class="zoom-control" id="positionButtonDiv">
+                            <div class="control-wrapper">
+                                <div class="control-button zoom-in"><i class="bi bi-zoom-in"></i></div>
+                                <div class="control-button zoom-out"><i class="bi bi-zoom-out"></i></div>
+                            </div>
+                        </div>
+                        <div class="zoom-open">
+                            <div class="control-button"><i class="zmdi zmdi-zoom-in"></i></div>
+                        </div>
+                    </div>
+                    <div class="backdrop-zoom"></div>
+
+                    <div class="facilities-floor-intro">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_toilet.png" alt="Nhà vệ sinhWC" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Nhà vệ sinh</h4>
+                                        <p class="icon-sub-title">WC</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_thang-cuon.png" alt="THANG CUỐNEscalator" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">THANG CUỐN</h4>
+                                        <p class="icon-sub-title">Escalator</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_thang-may.png" alt="THANG MÁYElevator" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">THANG MÁY</h4>
+                                        <p class="icon-sub-title">Elevator</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_xe-lan.png" alt="Phòng vệ sinh cho người khuyết tậtHandicapped toilet" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Phòng vệ sinh cho người khuyết tật</h4>
+                                        <p class="icon-sub-title">Handicapped toilet</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_me-con.png" alt="Phòng Mẹ & BéBaby room" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Phòng Mẹ & Bé</h4>
+                                        <p class="icon-sub-title">Baby room</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+                <div class="tab-pane fade " id="floor-map-3" role="tabpanel" aria-labelledby="floor-map-3">
+                    <div class="zoom-wrapper">
+
+                        <div class="zoom-image">
+                            <img class="panzoom img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/3f-2.png">
+                        </div>
+                        <div class="button-close"><i class="zmdi zmdi-close-circle"></i></div>
+                        <div class="zoom-control" id="positionButtonDiv">
+                            <div class="control-wrapper">
+                                <div class="control-button zoom-in"><i class="bi bi-zoom-in"></i></div>
+                                <div class="control-button zoom-out"><i class="bi bi-zoom-out"></i></div>
+                            </div>
+                        </div>
+                        <div class="zoom-open">
+                            <div class="control-button"><i class="zmdi zmdi-zoom-in"></i></div>
+                        </div>
+                    </div>
+                    <div class="backdrop-zoom"></div>
+
+                    <div class="facilities-floor-intro">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_toilet.png" alt="Nhà vệ sinhToilet" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Nhà vệ sinh</h4>
+                                        <p class="icon-sub-title">Toilet</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_thang-cuon.png" alt="Thang CuốnEscalator" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Thang Cuốn</h4>
+                                        <p class="icon-sub-title">Escalator</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_thang-may.png" alt="THANG MÁYElevator" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">THANG MÁY</h4>
+                                        <p class="icon-sub-title">Elevator</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_xe-lan.png" alt="Phòng vệ sinh cho người khuyết tậtHandicapped toilet" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Phòng vệ sinh cho người khuyết tật</h4>
+                                        <p class="icon-sub-title">Handicapped toilet</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                                <div class="facilities-icon-image d-flex">
+                                    <div class="icon-img">
+                                        <img class="img-fluid" src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2018/10/note_me-con.png" alt="Phòng Mẹ & BéBaby room" />
+                                    </div>
+                                    <div class="icon-body">
+                                        <h4 class="icon-title text-uppercase">Phòng Mẹ & Bé</h4>
+                                        <p class="icon-sub-title">Baby room</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="footer">
+    <div class="section-address">
+        <!-- <div class="map" id="map" data-map='{"latitude":,"longitude":}'data-icon='{"url":"/assets/img/aeon-marker.svg"}'></div> -->
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.123004011901!2d106.61583991451994!3d10.80189009230427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752bfa5e75b8f7%3A0x8d1076f7a39cba5e!2sAEON+MALL+Tan+Phu+Celadon!5e0!3m2!1sen!2s!4v1550570146320" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="contact">
+            <div class="text-uppercase h1">Liên hệ</div>
+            <ul class="contact-info list-unstyled mb-md-0">
+                <li><i class="zmdi zmdi-pin"></i>Địa chỉ: Số 30 Tân Thắng, Phường Sơn Kỳ, Quận Tân Phú, Tp. Hồ Chí Minh</li>
+                <li><i class="zmdi zmdi-phone"></i>Hotline: 028.62887733 - ext: 129</li>
+                <li><i class="zmdi zmdi-email-open"></i><a href="mailto:celadon.cs@aeonmall-vn.com">Email: celadon.cs@aeonmall-vn.com</a></li>
+            </ul>
+            <hr class="ml-0 d-none d-md-block">
+            <div class="share-with">
+                <h3 class="font-weight-semibold">Liên kết</h3>
+                <div class="socials socials-square">
+                    <a class="social" target="_blank" href="https://www.facebook.com/aeonmalltanphuceladon/" title="facebook"><i class="zmdi zmdi-facebook"></i></a>
+                </div>
+            </div>
+            <div class="mb-1">Company code:  Số 0311241512 cấp bởi Uỷ ban nhân dân Thành phố Hồ Chí Minh ngày 07 tháng 10 năm 2011.</div>
+
+            <div class="copyright font-weight-semibold"> Copyright ©AEONMALL Tân Phú Celadon</div>
+        </div>
+        <div class="button-scroll-message"><a class="scroll-top" href="#header" title="scroll to top" data-action="scroll"><i class="bi bi-chevron-up"></i></a></div>
+        <div style="position:fixed; z-index:9999999;" class="fb-page fb-page-style" data-tabs="messages" data-href="https://www.facebook.com/aeonmalltanphuceladon/" data-width="260" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+    </div>
+    <div class="footer-logo">
+        <div class="row">
+            <div class="col-md-7 d-md-flex">
+                <a class="footer-brand d-none" href="https://aeonmall-tanphuceladon.com.vn/">
+                    <img src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2019/11/logo-aeonmall-tanphu.png" alt="">
+                </a>
+                <h1 class="footer-slogan">AEON MALL Tân Phú Celadon - Địa điểm vui chơi và mua sắm lí tưởng cho cả gia đình!</h1>
+            </div>
+            <div class="col-md-5 d-flex flex-wrap justify-content-md-end">
+                <a class="footer-brand" target="_blank" href="https://aeonmall-long-bien.com.vn/">
+                    <img src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2019/11/logo-aeonmall-longbien.png" alt="AEON MALL Long Biên">
+                </a>
+                <a class="footer-brand" target="_blank" href="https://aeonmall-hadong.com.vn/">
+                    <img src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2019/11/logo-aeonmall-hadong.png" alt="AEON MALL Hà Đông">
+                </a>
+                <a class="footer-brand" target="_blank" href="https://aeonmall-haiphong-lechan.com.vn/">
+                    <img src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2020/06/aeon-mall-hai-phong-logo.png" alt="AEON MALL Hải Phòng Lê Chân">
+                </a>
+                <a class="footer-brand" target="_blank" href="https://aeonmall-binhduongcanary.com.vn/">
+                    <img src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2019/11/logo-aeonmall-binhduong.png" alt="AEON MALL Bình Dương">
+                </a>
+                <a class="footer-brand" target="_blank" href="https://aeonmall-binhtan.com.vn/">
+                    <img src="https://aeonmall-tanphuceladon.com.vn/wp-content/uploads/2019/11/logo-aeonmall-binhtan.png" alt="AEON MALL Bình Tân">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id='fb-root'></div>
+
+

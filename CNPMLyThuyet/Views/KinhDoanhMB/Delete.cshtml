@@ -1,0 +1,74 @@
+﻿@model CNPMLyThuyet.Model.MatBang
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_KinhDoanh.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc muốn xóa?</h3>
+<div>
+    <h4>MatBang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenMB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TinhTrang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhTrang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            <img src="~/Images/@Model.ImagePath" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KhachHang.HoVaTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhachHang.HoVaTen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tang.TenTang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tang.TenTang)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            <a href="/KinhDoanhMB/Index" class="btn btn-success">Trở lại</a>
+        </div>
+    }
+</div>

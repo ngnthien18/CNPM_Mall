@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CNPMLyThuyet.Model.ChiTietBaoTri>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_KyThuat.cshtml";
+}
+
+<h2>Chi tiết bảo trì</h2>
+
+<p>
+    <a href="/ChiTietBaoTris/Create" class="btn btn-success">Tạo mới</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayBaoTri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChiPhi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhanVien.MaNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThietBi.TenTB)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayBaoTri)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChiPhi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhanVien.MaNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThietBi.TenTB)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.STT }, new {@class="btn btn-primary"}) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.STT }, new {@class="btn btn-success"}) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.STT }, new {@class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

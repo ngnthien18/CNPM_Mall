@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CNPMLyThuyet.Model.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_NhanSu.cshtml";
+}
+
+<h2>Trang quản lý tài khoản</h2>
+
+<p>
+    <a href="/NhanSuUSer/Create" class="btn btn-primary">Tạo mới</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pass)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pass)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.IDUSER }, new {@class="btn btn-primary"}) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.IDUSER }, new {@class="btn btn-success"}) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.IDUSER } , new{@class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,27 @@
+﻿@model CNPMLyThuyet.Model.Tang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_KinhDoanh.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Tang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaTang }, new {@class="btn btn-primary"} ) |
+    <a href="/KinhDoanhTang/Index" class="btn btn-success">Trở lại</a>
+</p>

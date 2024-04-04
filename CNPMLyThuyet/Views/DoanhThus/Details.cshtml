@@ -1,0 +1,51 @@
+﻿@model CNPMLyThuyet.Model.DoanhThu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_TaiChinh.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>DoanhThu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Thang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatBang.TenMB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatBang.TenMB)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aaabcad57e4e40a3b6da737c76926b59" Name="Diagram1">
+        <EntityTypeShape EntityType="TTMaiModel.ChiTietBaoTri" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTMaiModel.DoanhThu" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTMaiModel.HoaDon" Width="1.5" PointX="7.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTMaiModel.KhachHang" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTMaiModel.MatBang" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTMaiModel.NhanVien" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTMaiModel.PhongBan" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTMaiModel.Tang" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTMaiModel.ThietBi" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TTMaiModel.User" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="TTMaiModel.FK__ChiTietBao__MaNV__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="TTMaiModel.FK__ChiTietBao__MaTB__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="TTMaiModel.fk_doanhthu_mamb" ManuallyRouted="false" />
+        <AssociationConnector Association="TTMaiModel.FK__HoaDon__MaMB__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="TTMaiModel.FK__HoaDon__MaNV__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="TTMaiModel.FK__MatBang__MaKH__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="TTMaiModel.fk_khachhang_users" ManuallyRouted="false" />
+        <AssociationConnector Association="TTMaiModel.FK__MatBang__MaTang__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="TTMaiModel.FK__NhanVien__IDUSER__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="TTMaiModel.FK__NhanVien__MaPB__29572725" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,73 @@
+﻿@model CNPMLyThuyet.Model.HoaDon
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_TaiChinh.cshtml";
+}
+
+
+
+<div id="parentDiv">
+    <h4 style="text-align:center">Phiếu hóa đơn</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayThanhToan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayThanhToan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MatBang.TenMB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatBang.TenMB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhanVien.TenNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.TenNV)
+        </dd>
+
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaHD }, new { @class = "btn btn-primary" }) |
+    <a href="/TaiChinhHD/Index" class="btn btn-success">Trở lại</a>
+    <button id="printPDF" class="btn btn-danger">Xuất PDF</button>
+</p>
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        $('#printPDF').click(function () {
+            var element = document.getElementById('parentDiv');
+            var opt = {
+                margin: 1,
+                filename: 'HoaDon.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            // New Promise-based usage:
+            html2pdf().set(opt).from(element).save();
+            // Old monolithic-style usage:
+            html2pdf(element, opt);
+        })
+    </script>
+    }

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CNPMLyThuyet.Model.MatBang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_KinhDoanh.cshtml";
+}
+
+<h2>Trang quản lý mặt bằng</h2>
+
+<p>
+    <a href="/KinhDoanhMB/Create" class="btn btn-primary">Tạo mới</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenMB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TinhTrang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KhachHang.HoVaTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tang.TenTang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenMB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinhTrang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagePath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KhachHang.HoVaTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tang.TenTang)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.MaMB },new {@class="btn btn-success"}) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaMB },new {@class="btn btn-primary"}) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaMB },new {@class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

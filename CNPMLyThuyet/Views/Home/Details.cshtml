@@ -1,0 +1,21 @@
+﻿@model CNPMLyThuyet.Model.MatBang
+    @{ 
+        ViewBag.Title = "Details";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+   
+
+<div class="row">
+    <div class="col-md-6">
+        <img src="~/Images/@Model.ImagePath" style="height:250px;width:300px" />
+    </div>
+    <div class="col-md-6">
+        <h2>Tên mặt bằng:@Model.TenMB</h2>
+        <p style="color:red">Giá:@Model.GiaTien</p>
+        <p>Giá chỉ mang tính chất tham khảo </p>
+        <br />
+        <p>Vui lòng liên hệ hoteline:1800.1119.119 để biết thêm chi tiết hoặc để lại thông tin của bạn <a href="/Home/Register">tại đây</a> chúng tôi sẽ liên hệ bạn</p>
+    </div>
+
+</div>
+
